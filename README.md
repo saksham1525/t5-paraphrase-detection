@@ -12,8 +12,8 @@ A fine-tuned T5-small model for text equivalence classification on the MRPC data
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/t5-text-equivalence.git
-cd t5-text-equivalence
+git clone https://github.com/yourusername/t5-paraphrase-detection.git
+cd t5-paraphrase-detection
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -22,6 +22,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
+cd src
 python main.py
 ```
 
@@ -41,14 +42,15 @@ Main requirements: `torch`, `transformers`, `datasets`, `scikit-learn`, `matplot
 ## Project Structure
 
 ```
-├── main.py                    # Main training pipeline
-├── training_logger.py         # Logging utilities
-├── training_plots.py          # Visualization utilities
-├── benchmark_comparison.py    # BERT benchmark comparison
-├── requirements.txt           # Python dependencies
-├── logs/                      # Training logs (timestamped)
-├── results/                   # Results and plots (timestamped)
-└── README.md                  # This file
+├── src/                       # Source code directory
+│   ├── main.py               # Main training pipeline
+│   ├── training_logger.py    # Logging utilities
+│   ├── training_plots.py     # Visualization utilities
+│   └── benchmark_comparison.py # BERT benchmark comparison
+├── requirements.txt          # Python dependencies
+├── logs/                     # Training logs (timestamped)
+├── results/                  # Results and plots (timestamped)
+└── README.md                 # This file
 ```
 
 ## Performance
