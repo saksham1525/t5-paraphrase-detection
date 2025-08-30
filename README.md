@@ -8,6 +8,7 @@ A fine-tuned T5-small model for text equivalence classification on the MRPC data
 - Real-time training progress with comprehensive logging with timestamped files
 - Performance benchmarking against BERT-base
 - Training visualization and structured result organization
+- **Modular codebase**: Clean separation of data handling, model operations, and utilities
 
 ## Installation
 
@@ -43,15 +44,20 @@ Main requirements: `torch`, `transformers`, `datasets`, `scikit-learn`, `matplot
 
 ```
 ├── src/                       # Source code directory
-│   ├── main.py               # Main training pipeline
-│   ├── training_logger.py    # Logging utilities
-│   ├── training_plots.py     # Visualization utilities
-│   └── benchmark_comparison.py # BERT benchmark comparison
+│   ├── main.py               # Main training pipeline orchestration (182 lines)
+│   ├── utils.py              # Core utilities: dataset, model, training functions (129 lines)
+│   └── outputs.py            # Output handling: logging, plotting, benchmarking (61 lines)
 ├── requirements.txt          # Python dependencies
 ├── logs/                     # Training logs (timestamped)
 ├── results/                  # Results and plots (timestamped)
 └── README.md                 # This file
 ```
+
+## Module Overview
+
+- **`main.py`**: High-level training orchestration and pipeline management
+- **`utils.py`**: Essential utilities including TextDataset, model operations, training/validation functions
+- **`outputs.py`**: All output operations including logging, plotting, and BERT benchmark comparison
 
 ## Performance
 
